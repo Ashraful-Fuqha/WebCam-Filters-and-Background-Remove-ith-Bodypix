@@ -1,0 +1,187 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  background: lightblue;
+  /* min-height: 100vh; */
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  background: url(../images/paper-1074131_1280.jpg) no-repeat;
+  margin: 0 auto;
+  /* overflow: hidden; */
+}
+
+.photobooth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  /* padding: 1rem; */
+  /* max-width: 150rem; */
+  /* margin: 0; */
+  border-radius: 2px;
+}
+
+/*clearfix*/
+.photobooth:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.photo {
+  width: 100%;
+  float: left;
+  border: 2px solid black;
+  border-radius: 2em;
+  /* margin-bottom: 2rem; */
+  /* min-height: ; */
+}
+
+.controls{
+  padding: 2rem;
+  font-size: 1rem;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.rgb {
+  margin-top: 3rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  display: none;
+}
+
+.red , .green , .blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+button {
+  font-weight: 700;
+  /* border: 5px groove black; */
+  border: 5px double black;
+  padding: 5px;
+  border-radius: .6rem;
+  background: transparent;
+  color: black;
+}
+
+.redEffectButton { 
+  /* border: 5px groove currentColor; */
+  color: red;
+  /* box-shadow: 0px 0px 5px 0px red; */
+}
+
+.greenScreenButton{
+  /* border: 5px groove currentColor; */
+  color: green;
+  /* box-shadow: 0px 0px 5px 0px green; */
+}
+
+.rgbSplitButton {
+  /* box-shadow: 0px 0px 5px 0px cyan; */
+  background: linear-gradient(to right, red, blue, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blurButton, .unblurButton {
+
+}
+
+.takePhoto {
+  margin-right: 3rem;
+}
+
+.player {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  width: 200px;
+}
+
+/*
+  Strip!
+*/
+
+.strip {
+  padding: 2rem;
+}
+
+.strip img {
+  width: 100px;
+  overflow-x: scroll;
+  padding: 0.8rem 0.8rem 2.5rem 0.8rem;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  background: #f5f5f5;
+}
+
+.strip a:nth-child(5n+1) img { transform: rotate(10deg); }
+.strip a:nth-child(5n+2) img { transform: rotate(-2deg); }
+.strip a:nth-child(5n+3) img { transform: rotate(8deg); }
+.strip a:nth-child(5n+4) img { transform: rotate(-11deg); }
+.strip a:nth-child(5n+5) img { transform: rotate(12deg); }
+
+@media only screen and (max-width : 375px){
+  .rgb{
+    flex-direction: row;
+  }
+  .buttons{
+    /* padding: 0 1rem; */
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    margin: 0 1rem;
+  }
+  .takePhoto{
+    margin-right: 0;
+  }
+  .player {
+    right: 0;
+    top: 30%;
+    width: 100px;
+  }
+}

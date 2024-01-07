@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get User Media Code Along!</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+  <!-- Load TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+  <!-- Load BodyPix -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+</head>
+<body>
+  <main>
+    <div class="photobooth">
+      <canvas class="photo"></canvas>
+      <video class="player"></video>
+    </div>
+    <div class="strip"></div>
+    <div class="controls">
+        <div class="buttons">
+          <button class="takePhoto">Take Photo</button>
+          <button class="noEffect">Plain</button>
+          <button class="rgbSplitButton">RGB</button>
+          <button class="greenScreenButton">Green Shade</button>
+          <button class="redEffectButton">Red Effect</button>
+          <button class="recordButton">Record</button>
+          <button class="stopButton" hidden>Stop</button>
+          <button class="blurButton">Blur</button>
+          <button class="unblurButton" hidden>UnBlur</button>
+        </div>
+        <div class="rgb"> 
+          <div class="red">
+            <label for="rmin">Red Min:</label>
+            <input type="range" min=0 max=255 name="rmin">
+            <label for="rmax">Red Max:</label>
+            <input type="range" min=0 max=255 name="rmax">
+          </div>
+          <br>
+          <div class="green">
+            <label for="gmin">Green Min:</label>
+            <input type="range" min=0 max=255 name="gmin">
+            <label for="gmax">Green Max:</label>
+            <input type="range" min=0 max=255 name="gmax">
+          </div>
+            <br>
+          <div class="blue">
+            <label for="bmin">Blue Min:</label>
+            <input type="range" min=0 max=255 name="bmin">
+            <label for="bmax">Blue Max:</label>
+            <input type="range" min=0 max=255 name="bmax">
+          </div>
+        </div>
+      </div>
+    <audio class="snap" src="./src/audio/snap.mp3" hidden></audio>
+
+    <script type="module" src="./src/js/script.js"></script>
+  </main>
+</body>
+</html>
